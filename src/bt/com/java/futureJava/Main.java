@@ -22,7 +22,7 @@ public class Main {
 		es.submit(new Executar(new ArrayList<Integer>(), 800000));
 		es.submit(new Executar(new ArrayList<Integer>(), 900000));
 		es.submit(new Executar(new ArrayList<Integer>(), 1000000));
-		System.out.println("Tempo Total com Future: " + (System.currentTimeMillis() - tempoInicio) + " milisegundos");
+		System.out.println("Tempo Total com Future: " + (System.currentTimeMillis() - tempoInicio) + " milisegundos " + Thread.currentThread().getName());
 		es.shutdown();
 
 		long tempoInicio1 = System.currentTimeMillis();
@@ -47,7 +47,7 @@ public class Main {
 		for (int i = 0; i < 500000; i++) {
 			lista5.add(i);
 		}
-		System.out.println("Tempo Total sem Future: " + (System.currentTimeMillis() - tempoInicio1) + " milisegundos");
+		System.out.println("Tempo Total sem Future: " + (System.currentTimeMillis() - tempoInicio1) + " milisegundos " + Thread.currentThread().getName());
 	}
 
 }

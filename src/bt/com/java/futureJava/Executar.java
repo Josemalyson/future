@@ -20,6 +20,7 @@ public class Executar implements Callable<List<Integer>> {
 		ExecutorService es1 = Executors.newCachedThreadPool();
 		Future<List<Integer>> futureList = es1.submit(new PreencherArrayList(liIntegers, tamanho));
 		es1.isShutdown();
+		System.out.println(futureList.get().size() + " " +Thread.currentThread().getName());
 		return futureList.get();
 	}
 
